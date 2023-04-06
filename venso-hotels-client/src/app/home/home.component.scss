@@ -8,7 +8,7 @@
   padding-top: 20px;
   text-align: center;
   color: #fff;
-  height: 700px;
+  height: 640px;
 }
 
 .header img {
@@ -19,14 +19,15 @@
 .header h2 {
   vertical-align: inherit;
   padding-top: 250px;
-  padding-bottom: 120px;
+  padding-bottom: 10px;
   font-size: 25px;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
 
-.header p {
-  margin: 18px 0;
+.header h1 {
+  margin: 30px 0;
+  font-size: 35px;
 }
 
 .login-btn {
@@ -38,6 +39,17 @@
   background: transparent;
   color: #fff;
   float: right;
+}
+
+.book-btn {
+  width: 100px;
+  padding: 8px 0;
+  outline: none !important;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  background-image: linear-gradient(#00ff7e, #1f3d90);
 }
 
 .input-group {
@@ -64,6 +76,51 @@
   padding: 0 25px !important;
   border-radius: 30px !important;
   box-shadow: none !important;
+}
+
+/* check-availability */
+
+.check-availability {
+  background-color: #fff
+}
+
+.check-availability mat-label{
+  color: #efefef;
+}
+
+.check-availability .card {
+  padding-top: 30px;
+  min-height: 80px;
+  border-radius: 0;
+  font-size: larger;
+  border: 1px solid #2596be;
+  border-bottom: 1px solid black;
+  background-color: #3ba1c5;
+}
+
+.mat-form-field {
+  text-align: center;
+}
+
+.check-availability .position {
+  padding-top: 20px;
+}
+
+.check-availability span {
+  font-size: medium;
+  font-weight: bold;
+  color: #efefef;
+  padding-top: 10px;
+}
+
+.clear-all {
+  width: 150px;
+  height: 60px;
+  padding: 8px 0;
+  outline: none !important;
+  border: 2px solid #fff;
+  background-image: linear-gradient(#00ff7e, #1f3d90);
+  color: #fff;
 }
 
 /* features */
@@ -276,13 +333,3 @@ h1 {
 .check-available {
   width: fit-content;
 }
-
-
-
-
-
-
-
-
-
-

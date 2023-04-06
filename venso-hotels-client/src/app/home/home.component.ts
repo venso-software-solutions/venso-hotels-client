@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('picker1') picker1!: MatDatepicker<Date>;
+  startDateControl = new FormControl(new Date());
 
-  ngOnInit(): void {
+  sortBy: any;
+  lifeCycle: any;
+  categoriesList: any;
+  applyFiltersForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.applyFiltersForm = this.formBuilder.group({
+      assetCategoryControl: [''],
+      lifecycleControl: [''],
+      sortByControl:[''],
+    });
   }
 
+  ngOnInit(): void {
+    this.categoriesList = ['Arugambey', 'Hikkaduwa', 'Nilaveli'];
+    this.lifeCycle = ['gtr', 'trgr']
+    this.sortBy = ['dsfvd', 'dscfsd'];
+  }
+
+  applyFiltersSearch() {}
+  clearSelectedDropDownValues() {}
 }

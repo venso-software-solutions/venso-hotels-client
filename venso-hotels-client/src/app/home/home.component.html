@@ -4,12 +4,75 @@
     <button type="button" class="login-btn">Login</button>
   </div>
   <h2>Venso Hotel</h2>
-  <p>Join us for a never ending adventure</p>
-  <div class="input-group">
-    <input type="text" name="" id="" class="form-control" placeholder="Search travel locations of Sri Lanka">
-    <div class="input-group-append">
-      <button type="submit" class="input-group-text btn">Search</button>
+  <button type="button" class="book-btn">Book Now</button>
+  <h1>Join us for a never ending adventure</h1>
+</section>
+<section class="check-availability">
+  <div class="row">
+    <div class="col-md-1">
     </div>
+    <div class="col-md-10">
+      <form [formGroup]="applyFiltersForm" (ngSubmit)="applyFiltersSearch()">
+        <div class="card card-body">
+          <div class="row">
+            <div class="col-md-2">
+              <mat-form-field appearance="outline">
+                <mat-label>SELECT HOTEL</mat-label>
+                <mat-select #assetCatMatRef formControlName="assetCategoryControl">
+                  <mat-option *ngFor="let category of categoriesList" [value]="category">
+                    {{category}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4 position">
+                  <span>CHECK IN</span>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Choose Start Date</mat-label>
+                    <mat-select #assetSortByMatRef formControlName="lifecycleControl">
+                      <mat-option *ngFor="let sort of sortBy" [value]="sort">
+                        {{sort.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4 position">
+                  <span>CHECK OUT</span>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Sort By</mat-label>
+                    <mat-select #assetSortByMatRef formControlName="sortByControl">
+                      <mat-option *ngFor="let sort of sortBy" [value]="sort">
+                        {{sort.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="col-auto">
+                <button class="clear-all ml-4" (click)="clearSelectedDropDownValues()">
+                  CHECK AVAILABILITY
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
   </div>
 </section>
 <section class="features">
